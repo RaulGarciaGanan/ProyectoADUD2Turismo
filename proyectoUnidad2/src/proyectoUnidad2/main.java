@@ -7,6 +7,7 @@ import conexionBBDD.*;
 
 public class main {
 	static conexionSQL conexion;
+	static conexionSQLite conexionSQLite;
 
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in) ;
@@ -30,6 +31,13 @@ public class main {
 				}
 				break;
 			case 2:
+				try {
+					conexionSQLite = new conexionSQLite();
+					conexionSQLite.BBDD();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				break;
 			case 3:
 				break;

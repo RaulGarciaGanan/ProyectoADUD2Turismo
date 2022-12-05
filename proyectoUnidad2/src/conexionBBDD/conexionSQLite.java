@@ -1,18 +1,22 @@
 package conexionBBDD;
 
-import java.sql.*;
+import java.sql.Connection;
 import java.sql.Date;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.*;
-import java.util.regex.*;
+import java.util.Scanner;
 
-import modelo.visitaclienteSQL;
-import objetos.*;
+import objetos.cliente;
+import objetos.empleado;
+import objetos.visitaGuiada;
+import objetos.visitacliente;
 
-public class conexionSQL {
-	Connection miConexion = new conexionBBDD().conectorBBDD();
-
+public class conexionSQLite {
+	Connection miConexion = new conexionBBDD().conectorSQLite();
+	
 	public void BBDD() throws SQLException {
 		Scanner in = new Scanner(System.in);
 		int menu;
@@ -47,7 +51,7 @@ public class conexionSQL {
 				verVisitaClientes();
 				break;
 			case 8:
-				apuntarseVisitas();
+				//apuntarseVisitas();
 				break;
 			case 9:
 				System.out.println("Saliendo del servidor MySQL");
@@ -66,13 +70,13 @@ public class conexionSQL {
 			menu = in.nextInt();
 			switch (menu) {
 			case 1:
-				crearEmpleados();
+				//crearEmpleados();
 				break;
 			case 2:
-				editarEmpleados();
+				//editarEmpleados();
 				break;
 			case 3:
-				borrarEmpleados();
+				//borrarEmpleados();
 				break;
 			case 4:
 				break;
@@ -92,14 +96,14 @@ public class conexionSQL {
 			menu = in.nextInt();
 			switch (menu) {
 			case 1:
-				crearClientes();
+				//crearClientes();
 				break;
 			case 2:
-				editarClientes();
+				//editarClientes();
 				;
 				break;
 			case 3:
-				borrarClientes();
+				//borrarClientes();
 				;
 				break;
 			case 4:
@@ -119,13 +123,13 @@ public class conexionSQL {
 			menu = in.nextInt();
 			switch (menu) {
 			case 1:
-				crearVisitas();
+				//crearVisitas();
 				break;
 			case 2:
-				editarVisitas();
+				//editarVisitas();
 				break;
 			case 3:
-				borrarVisitas();
+				//borrarVisitas();
 				break;
 			case 4:
 				break;
@@ -181,7 +185,6 @@ public class conexionSQL {
 		}
 		miConexion.close();
 	}
-
 	public void crearEmpleados() throws SQLException {
 		Scanner in = new Scanner(System.in);
 		int opcion = 1;
@@ -576,4 +579,5 @@ public class conexionSQL {
 		 * pat = Pattern.compile("[0-9]{}");
 		 */
 	}
+
 }

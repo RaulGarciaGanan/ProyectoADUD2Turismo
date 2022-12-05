@@ -9,13 +9,13 @@ public class conexionBBDD {
     public conexionBBDD() {
     }
     
-    private Connection conectorSQLite() {
+    public Connection conectorSQLite() {
         Connection conector = null;
         try {
             //Cargamos el driver
             Class.forName("org.sqlite.JDBC");
             //Establecemos la conexión con la base de datos
-            conector = DriverManager.getConnection("jdbc:sqlite:parquesqlite.db");
+            conector = DriverManager.getConnection("jdbc:sqlite:BBDDProyecto.db");
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
